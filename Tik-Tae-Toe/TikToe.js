@@ -1,5 +1,6 @@
 import React from 'react'
 import Board from './Board'
+import './TikToe.css'
 export default function TikToe() {
   return (
     <>
