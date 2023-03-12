@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --theme : rgb(39,255,250);
+}
+
+body{
+  background-color: rgb(25, 25, 34);
+  color: white;
+}
+.hero .title,.work{
+  line-height: 60px;
+}
+
+.hero .span{
+  width: 0px;
+  font-size: 40px;
+  overflow: hidden;
+  white-space: pre;
+  animation: typing 4s steps(20,start) infinite alternate,blink 2s linear infinite;
+  border-right: 5px solid black;
+}
+@keyframes typing {
+  0%{width: 0;}
+  100%{width: 400px;}
+}
+@keyframes blink {
+  0%,50%,100%{border-right-color: black;}
+  25%,75%{border-right-color: white;}
+}
+
+.navigation .active{
+  color: var(--theme);
+}
+
+.hero img{
+  width: 600px;
+  height: 600px;
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  border-radius: 50%;
+  box-shadow: 0px 10px 10px 10px var(--theme);
+}
+
+.hero button{
+  background-color: var(--theme);
+  color: black;
+}
+
+.hero i{
+  color: var(--theme);
+  outline: 2px solid var(--theme);
+}
+
