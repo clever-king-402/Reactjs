@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.2/babel.min.js" integrity="sha512-ccYfmoFEslhbxS5qMNjCMtQEL6Yk6zJn8Bh3Y7hAVEi8K720q6l3MSD7JBWhY0CbITu7G+eaE4xjztDNeEizUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    #container{
+        background-color: #fff;
+        
+    }
+    div div .letter{
+        display: inline-block;
+        padding: 10px;
+        margin:10px ;
+        background-color: yellow;
+        padding: 50px;
+        color: red;
+        font-size: 40px;
+        font-family: monospace;
+    }
+</style>
+</head>
+<body>
+
+    <div id="container">
+
+    </div>
+
+    <script type="text/babel">
+        let Letter = (props)=>{
+            let styleLetter = {
+                display: "inline-block",
+                padding: "10px",
+                margin:"10px" ,
+                backgroundColor: props.bgColor,
+                padding: "50px",
+                color: "red",
+                fontSize: "40px",
+                fontFamily: "monospace",
+            }
+            return (
+                <div style={styleLetter}>
+                    {props.children}
+                </div>
+            )
+        }
+
+        const destination = document.getElementById('container');
+
+        ReactDOM.render(
+            <div>
+                <Letter bgColor="#ffaccc">A</Letter>
+                <Letter bgColor="#fedcba">E</Letter>
+                <Letter bgColor="#abedc2">I</Letter>
+                <Letter bgColor="#fabbc0">O</Letter>
+                <Letter bgColor="#ccbbaa">U</Letter>
+            </div>,
+            destination
+
+        )
+    </script>
+</body>
+</html>

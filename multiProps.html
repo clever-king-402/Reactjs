@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiProps</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.2/babel.min.js" integrity="sha512-ccYfmoFEslhbxS5qMNjCMtQEL6Yk6zJn8Bh3Y7hAVEi8K720q6l3MSD7JBWhY0CbITu7G+eaE4xjztDNeEizUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+        var Display = (props)=>{
+            var displayStyle = {
+                fontSize : "40px"
+            }
+            return(
+            <div>
+                <p style={displayStyle}>{props.size}</p>
+                <p style={displayStyle}>{props.num}</p>
+                <p style={displayStyle}>{props.color}</p>
+            </div>
+            )
+        }
+
+        var Label = (props)=>{
+            return(
+            <Display {...props} />)
+        }
+
+        var Shirt = (props) => {
+            let dist = {
+                color : "#abcedf",
+                size : "40px",
+                num : 40
+            }
+            return(
+            <>
+            <Label {...dist} />
+            </>
+            )
+        }
+
+        let destination = document.querySelector("#container");
+        ReactDOM.render(
+            <Shirt color="steelblue" size="medium" num="3.14"/>
+            ,
+            destination
+        )
+    </script>
+</body>
+</html>
