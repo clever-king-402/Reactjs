@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.2/babel.min.js" integrity="sha512-ccYfmoFEslhbxS5qMNjCMtQEL6Yk6zJn8Bh3Y7hAVEi8K720q6l3MSD7JBWhY0CbITu7G+eaE4xjztDNeEizUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+        import {useState} from "react";
+        // const [count,setCount] = useState(0);
+        // let destination = document.getElementById("container");
+        // ReactDOM.render(
+        //     <button onClick={()=>setCount(count+1)}>hell owlrd</button>
+        //     ,
+        // destination
+        // )
+        export function App(props) {
+  const [count,setCount] = useState(0);
+  useEffect(()=>{
+    fetch('foo').then(()=>{setCount(count + 1)})
+    return ()=> alert("hello wolrd")
+  },[]);
+  return (
+    <div>
+    <button onClick={()=>{setCount(count + 1)}} >{count} Add ONe</button>
+    <button onClick={()=>{setCount(count - 1)}}>{count} remove ONe</button>
+    </div>
+  );
+}
+    </script>
+</body>
+</html>
