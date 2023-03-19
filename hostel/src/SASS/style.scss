@@ -1,0 +1,16 @@
+@import 'initial';
+
+@mixin flex(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-items{
+    ul{
+        @include flex;
+        li{
+            padding: 20px;
+        }
+    }
+}
