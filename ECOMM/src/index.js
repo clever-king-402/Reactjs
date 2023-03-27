@@ -6,9 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import "./assets/css/style.css";
 import "./assets/lib/slick/slick.css";
 import "./assets/lib/slick/slick-theme.css";
-// import './assets/js/main.js'
+// import $ from "jquery"
 // import "./assets/lib/slick/slick.min.js"
 // import "./assets/lib/easing/easing.min.js"
+// import './assets/js/main.js'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
