@@ -43,3 +43,21 @@ export const fetchBrands = async (setBrands) => {
    const data = await response.json();
    setProduct(data);
  };
+
+ export const sendReview = (formData,slug) => {
+   fetch(`http://127.0.0.1:8011/api/submit-review/${slug}`, {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify(formData),
+   });
+ };
+
+ export const fetchReview=async(setReview,slug)=>{
+   const response = await fetch(
+     `http://127.0.0.1:8011/api/submit-review/${slug}`
+   );
+   const data = await response.json();
+   setReview(data);
+ }
