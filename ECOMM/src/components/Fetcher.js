@@ -61,3 +61,26 @@ export const fetchBrands = async (setBrands) => {
    const data = await response.json();
    setReview(data);
  }
+
+ export const createUser = async(userData) =>{
+  try {
+    const response = await fetch(`http://127.0.0.1:8011/api/createuser/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!response.ok) {
+      // handle non-2xx response codes here
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    const responseData = await response.json();
+    // handle the response data here
+  } catch (error) {
+    // handle network errors and other exceptions here
+    alert("Error creating user:", error);
+  }
+ }
